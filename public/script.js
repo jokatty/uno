@@ -1,8 +1,9 @@
 const socket = io();
 let match = false;
-function checkMatchedCard() {
+function checkMatchedCard(matchedCardDiv) {
   if (match == 'true') {
     console.log('hey, this is a match');
+    matchedCardDiv.remove();
   }
 }
 
@@ -56,7 +57,7 @@ function createGameElement(playersCards, player) {
   gameCanvasDiv.appendChild(cardContainer);
   for (let i = 0; i < playersCards.length; i += 1) {
     const cardDiv = document.createElement('div');
-    cardDiv.setAttribute('id', 'card');
+    cardDiv.setAttribute('id', `card${i}`);
     cardDiv.setAttribute('class', `col, ${playersCards[i].suit}`);
     const cardTitle = document.createElement('h3');
     cardTitle.innerText = playersCards[i].suit;
@@ -67,7 +68,7 @@ function createGameElement(playersCards, player) {
     cardContainer.appendChild(cardDiv);
     cardDiv.addEventListener('click', (e) => {
       console.log(e);
-      checkMatchedCard();
+      checkMatchedCard(cardDiv);
     });
   }
   // const cardPile = !!document.getElementById('card-pile');
