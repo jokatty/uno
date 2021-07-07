@@ -22,9 +22,16 @@ addCard.addEventListener('click', () => {
   cardRow.appendChild(cardDiv);
   cardDiv.addEventListener('click', () => {
     cardDiv.remove();
+    // reset the pile card to show the 'flip me message'
+    const resetSuit = document.getElementById('suit');
+    console.log('newly added card, flip me works');
+    resetSuit.innerText = 'Flip me!!';
+    const resetRank = document.getElementById('rank');
+    resetRank.innerText = '';
   });
   // reset the pile card to show the 'flip me message'
   const resetSuit = document.getElementById('suit');
+  console.log('add card, flip me works');
   resetSuit.innerText = 'Flip me!!';
   const resetRank = document.getElementById('rank');
   resetRank.innerText = '';
@@ -67,6 +74,7 @@ function createPlayersCard(playersCards, playerName) {
       cardDiv.remove();
       // reset the pile card to show the 'flip me message'
       const resetSuit = document.getElementById('suit');
+      console.log('remove card, flip me works');
       resetSuit.innerText = 'Flip me!!';
       const resetRank = document.getElementById('rank');
       resetRank.innerText = '';
