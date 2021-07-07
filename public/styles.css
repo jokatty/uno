@@ -124,3 +124,7 @@ li {
   font-size: 2rem;
   margin-top: 7px;
 }
+.flip-me {
+  height: 3.5rem;
+  width: 3rem;
+}
