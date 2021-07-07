@@ -17,6 +17,11 @@ body {
 }
 #intro-container {
   margin: auto;
+  height: 50vh;
+}
+.name {
+  padding-top: 20%;
+  padding-bottom: 5%;
 }
 .intro-text {
   text-align: center;
@@ -97,6 +102,7 @@ h3 {
 }
 .rule-title {
   color: #430257;
+  font-weight: 500;
 }
 .rule-description {
   color: rgb(119, 118, 118);
@@ -104,4 +110,8 @@ h3 {
 li {
   font-weight: 200;
   color: rgb(119, 118, 118);
+}
+.wiki-link {
+  color: rgb(99, 99, 245);
+  font-weight: 100;
 }
