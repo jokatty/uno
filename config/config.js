@@ -7,4 +7,11 @@ module.exports = {
     host: '127.0.0.1',
     dialect: 'postgres',
   },
+  production: {
+    username: 'jyotikattani',
+    password: null,
+    database: 'uno_production',
+    host: '127.0.0.1',
+    dialect: 'postgres',
+  },
 };

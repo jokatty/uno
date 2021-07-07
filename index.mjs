@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
 bindRoutes(app);
+// const PORT = process.env.PORT || 3004;
 const PORT = process.env.PORT || 3004;
 app.listen(PORT, () => {
   console.log(`server started on port${PORT}`);
