@@ -104,6 +104,12 @@ async function gameStarted() {
   const popedCard = document.getElementById('poped-card');
   popedCard.addEventListener('click', () => {
     getPopedCardData();
+    //  check if the # of players hand is 1:
+    const playersHand = document.getElementById('card-row').childElementCount;
+    if (playersHand == 1) {
+      alert('UNO!!');
+      window.location.reload();
+    }
   });
 }
 
