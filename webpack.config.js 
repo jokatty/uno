@@ -1,0 +1,32 @@
+// const path = require('path');
+
+// module.exports = {
+//   entry: './src/script.js',
+//   output: {
+//     filename: 'script.js',
+//     path: path.resolve(__dirname, 'dist'),
+//   },
+// };
+
+const path = require('path');
+
+module.exports = {
+  entry: './src/script.js',
+  output: {
+    filename: 'script.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/, // regex to see which files to run babel on
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
+  },
+};

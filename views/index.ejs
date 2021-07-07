@@ -11,23 +11,24 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!-- container appears when the page loads -->
-    <!-- <div id="intro-container" class="container">
-      <div id="signup-container"></div>
-      <div id="login-container"></div>
-    </div> -->
-    <div id="intro-container" class="container">
-      <h3>Enter your name to play!</h3>
+    <div id="intro-container" class="container mt-5 pt-5">
+      <h3 class="mt-5 mb-3">Enter your name to play!</h3>
       <div class="input-group mb-3">
         <input
           type="text"
           class="form-control"
           placeholder="Gamer's name"
           aria-label="Recipient's username"
-          aria-describedby="button-addon2"
+          aria-de scribedby="button-addon2"
           name="playerName"
           id="player-name"
         />
@@ -39,14 +40,69 @@
       </div>
     </div>
 
-    <div id="play-game" style="display: none">
-      <button id="play-btn">Play</button>
+    <div id="play-game" style="display: none" class="container">
+      <!--  -->
+      <div class="row">
+        <div class="card" style="width: 18rem;">
+          <img src="..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+          </ul>
+          <div class="card-body">
+            <a href="#" class="card-link">Card link</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="row">
+        <button id="play-btn">Play</button>
+      </div>
     </div>
 
     <!-- game started -->
-    <div class="container-fluid" id="game-started" style="display: none">
-      <h3>Game started</h3>
+    <div class="container" id="game-started" style="display: none">
+      <div class="row d-flex justify-content-center">
+        <h3 class="mb-2">Game Started!</h3></br>
+        <p>You are dealt five cards</p>
+        <p>If your card matches the pile card: color or number</p>
+        <p>Click on your card to get rid of it</p>
+      </div>
+      <!--  this is where the cards are generated dynamically -->
+      <div class="row mb-5 pb-5" id="card-row"></div>
+      <!-- pile card info from here -->
+      <h5 class="mt-5 mb-2 pt-5 pb-2">Click to see the card in the pile</h5>
+      <div class="row card-pile" id="card-pile">
+        <div class="col-4" id="poped-card">
+          <h3 id="suit">Flip me!!</h3>
+          <h6 id="rank"></h6>          
+        </div>
+      </div>
+
+      <!-- add to the players hand -->
+      <div class="row mt-5 pt-5">
+        <div class="col-6 mx-auto">
+          <span>Didn't find a match?</span>
+          <button type="button" class="btn btn-primary btn-sm ml-3" id="add-card">add card to player's hand</button>
+        </div>
+      </div>
     </div>
+
+    <!-- <div class="container-fluid" id="game-started" style="display: none">
+      <h3>Game started</h3>
+      <div class="row" id="card-row"></div>
+      <div class="new-row" id="new-row"></div>
+      <div class="row" id="next-card" style="display: none">
+        <button id="next-btn">Next Card</button>
+        <button id="add-card">Add card to player's hand</button>
+      </div>
+    </div> -->
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

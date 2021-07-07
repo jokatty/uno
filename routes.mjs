@@ -17,4 +17,5 @@ export default function bindRoutes(app) {
   app.get('/game', gameController.show);
   app.post('/game', gameController.create);
   app.get('/cards', cardController.show);
+  app.delete('/cards', cardController.deleteCard);
 }
