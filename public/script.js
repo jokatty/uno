@@ -89,6 +89,13 @@ function createPlayersCard(playersCards, playerName) {
  * make the card display area visible.
  */
 async function gameStarted() {
+  // get rid of the rule div
+  const ruleDiv = document.getElementById('rule-div');
+  // ruleDiv.style.display = 'none';
+  ruleDiv.setAttribute('class', '.d-none');
+  // get rid of the card
+  const ruleCard = document.getElementById('rule-div');
+  ruleCard.style.display = 'none';
   // get rid of the play btn
   const playBtn = document.getElementById('play-btn');
   playBtn.style.display = 'none';
