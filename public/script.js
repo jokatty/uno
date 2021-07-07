@@ -72,6 +72,8 @@ function createPlayersCard(playersCards, playerName) {
     cardRow.appendChild(cardDiv);
     cardDiv.addEventListener('click', () => {
       cardDiv.remove();
+      const matchAudio = new Audio('match.wav');
+      matchAudio.play();
       // reset the pile card to show the 'flip me message'
       const resetSuit = document.getElementById('suit');
       console.log('remove card, flip me works');
@@ -111,6 +113,8 @@ async function gameStarted() {
       // window.location.reload();
       const successMsg = document.getElementById('success-msg');
       successMsg.style.display = 'block';
+      const audio = new Audio('won.flac');
+      audio.play();
       const playAgain = document.getElementById('play-again');
       playAgain.addEventListener('click', () => {
         window.location.reload();
