@@ -15,7 +15,8 @@ addCard.addEventListener('click', () => {
   cardDiv.setAttribute('class', `col, ${suit}`);
   const cardTitle = document.createElement('h3');
   cardTitle.innerText = suit;
-  const cardRank = document.createElement('p');
+  const cardRank = document.createElement('h6');
+  cardRank.setAttribute('class', 'dynamic-rank');
   cardRank.innerText = rank;
   cardDiv.appendChild(cardTitle);
   cardDiv.appendChild(cardRank);
@@ -65,7 +66,8 @@ function createPlayersCard(playersCards, playerName) {
     cardDiv.setAttribute('class', `col, ${playersCards[i].suit}`);
     const cardTitle = document.createElement('h3');
     cardTitle.innerText = playersCards[i].suit;
-    const cardRank = document.createElement('p');
+    const cardRank = document.createElement('h6');
+    cardRank.setAttribute('class', 'dynamic-rank');
     cardRank.innerText = playersCards[i].rank;
     cardDiv.appendChild(cardTitle);
     cardDiv.appendChild(cardRank);

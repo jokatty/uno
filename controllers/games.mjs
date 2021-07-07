@@ -92,7 +92,8 @@ export default function initGameController(db) {
       if (game.length === 0) {
         const cardDeck = shuffleCards(makeDeck());
         // const player1Hand = [cardDeck.pop(), cardDeck.pop(), cardDeck.pop(), cardDeck.pop(), cardDeck.pop(), cardDeck.pop(), cardDeck.pop()];
-        const player1Hand = [cardDeck.pop(), cardDeck.pop()];
+        const player1Hand = [cardDeck.pop(), cardDeck.pop(), cardDeck.pop(), cardDeck.pop(), cardDeck.pop()];
+        // const player1Hand = [cardDeck.pop(), cardDeck.pop()];
         const newGame = {
           gameState: {
             cardDeck,
@@ -114,7 +115,7 @@ export default function initGameController(db) {
         // const secondPlayerHand = game.gameState.cardDeck.pop();
         const secondPlayerHand = [];
         // draw the cards for second player.
-        for (let i = 0; i < 2; i += 1) {
+        for (let i = 0; i < 5; i += 1) {
           const drawnCard = game.gameState.cardDeck.pop();
           secondPlayerHand.push(drawnCard);
         }

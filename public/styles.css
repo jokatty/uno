@@ -27,9 +27,10 @@ body {
   text-align: center;
   margin-bottom: 0;
   font-size: 1.25;
+  font-weight: 200;
 }
 #game-started {
-  margin-top: 200px;
+  /* margin-top: 200px; */
   margin-bottom: 200px;
 }
 h2 {
@@ -114,4 +115,12 @@ li {
 .wiki-link {
   color: rgb(99, 99, 245);
   font-weight: 100;
+}
+#rank {
+  font-size: 2rem;
+  margin-top: 7px;
+}
+.dynamic-rank {
+  font-size: 2rem;
+  margin-top: 7px;
 }
