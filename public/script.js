@@ -107,8 +107,14 @@ async function gameStarted() {
     //  check if the # of players hand is 1:
     const playersHand = document.getElementById('card-row').childElementCount;
     if (playersHand == 1) {
-      alert('UNO!!');
-      window.location.reload();
+      // alert('UNO!!');
+      // window.location.reload();
+      const successMsg = document.getElementById('success-msg');
+      successMsg.style.display = 'block';
+      const playAgain = document.getElementById('play-again');
+      playAgain.addEventListener('click', () => {
+        window.location.reload();
+      });
     }
   });
 }
