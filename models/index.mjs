@@ -1,11 +1,11 @@
-import sequelizePackage from 'sequelize';
+import { Sequelize } from 'sequelize';
 import url from 'url';
 import allConfig from '../config/config.js';
 
 import initPlayerModel from './player.mjs';
 import initGameModel from './game.mjs';
 
-const { Sequelize } = sequelizePackage;
+// const { Sequelize } = sequelizePackage;
 const env = process.env.NODE_ENV || 'development';
 // console.log()
 // console.log(env);
@@ -28,10 +28,7 @@ if (env === 'PRODUCTION') {
   config.host = host;
   config.port = port;
   sequelize = new Sequelize(dbName, username, password, config);
-}
-
-// If env is not production, retrieve DB auth details from the config
-else {
+} else {
   sequelize = new Sequelize(
     config.database,
     config.username,
