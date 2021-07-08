@@ -10,7 +10,6 @@ export default function bindRoutes(app) {
   const indexController = initIndexController(db);
   const gameController = initGameController(db);
   const cardController = initCardController(db);
-  // const indexController = initIndexController();
 
   app.get('/', indexController.index);
   app.post('/', indexController.create);

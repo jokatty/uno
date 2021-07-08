@@ -4,11 +4,8 @@
  */
 const addCard = document.getElementById('add-card');
 addCard.addEventListener('click', () => {
-  console.log('hey add card got clicked');
   const suit = (`;${document.cookie}`).split('; suit=').pop().split(';').shift();
-  console.log(suit);
   const rank = (`;${document.cookie}`).split('; rank=').pop().split(';').shift();
-  console.log(rank);
   // display the card in player's side
   const cardRow = document.getElementById('card-row');
   const cardDiv = document.createElement('div');
@@ -40,11 +37,10 @@ addCard.addEventListener('click', () => {
 
 /**
  * STEP 7
+ * make request to db for poped card data.
  */
 async function getPopedCardData() {
   const response = await axios.get('/cards');
-  console.log('response of get poped card');
-  console.log(response.data);
   const rank = document.getElementById('rank');
   const suit = document.getElementById('suit');
   rank.innerText = response.data.rank;
@@ -78,7 +74,6 @@ function createPlayersCard(playersCards, playerName) {
       matchAudio.play();
       // reset the pile card to show the 'flip me message'
       const resetSuit = document.getElementById('suit');
-      console.log('remove card, flip me works');
       resetSuit.innerText = 'Flip me!!';
       const resetRank = document.getElementById('rank');
       resetRank.innerText = '';
@@ -106,8 +101,6 @@ async function gameStarted() {
   gameDiv.style.display = 'block';
   // make a call to backend and get player's data:
   const response = await axios.get('/game');
-  console.log(response);
-  console.log('response data after get game');
   //  use the player's hand data we received from backend and display player's cards.
   createPlayersCard(response.data[0], response.data[1]);
 
@@ -138,8 +131,7 @@ async function gameStarted() {
  * A player is created and a game is created in DB
  */
 async function playGame(currentPlayer) {
-  const response = await axios.post('/game', { currentPlayer });
-  console.log(response.data);
+  await axios.post('/game', { currentPlayer });
   gameStarted();
 }
 
@@ -165,9 +157,7 @@ function startGamePage(joinedPlayer) {
  * call back function for JOIN GAME
  */
 async function createPlayer(player) {
-  await axios.post('/', { player }).then((response) => {
-    console.log(response);
-  });
+  await axios.post('/', { player });
   startGamePage(player);
 }
 /**

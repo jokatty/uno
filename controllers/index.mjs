@@ -1,12 +1,12 @@
 export default function initIndexController(db) {
+  // render the index page
   const index = (request, response) => {
-    // db.Item.findAll()
-    //   .then((items) => {
-    //     response.render('items/index', { items });
-    //   })
-    //   .catch((error) => console.log(error));
     response.render('index');
   };
+  /**
+   * creates player in the players table
+   * @param req: get the player data from response body.
+   */
   const create = async (req, res) => {
     const playerName = req.body.player;
     try {
