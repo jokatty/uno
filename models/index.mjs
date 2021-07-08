@@ -1,11 +1,12 @@
 import sequelizePackage from 'sequelize';
+import url from 'url';
 import allConfig from '../config/config.js';
 
 import initPlayerModel from './player.mjs';
 import initGameModel from './game.mjs';
 
 const { Sequelize } = sequelizePackage;
-const env = process.env.NODE_ENV || 'production';
+const env = process.env.NODE_ENV || 'development';
 // console.log()
 // console.log(env);
 const config = allConfig[env];
